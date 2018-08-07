@@ -1,0 +1,28 @@
+--cpu Cortex-M0
+".\output\data_process.o"
+".\output\display_ctrl.o"
+".\output\flash_prgrm.o"
+".\output\key.o"
+".\output\led_class.o"
+".\output\mcu_config.o"
+".\output\normal_display.o"
+".\output\show_1.o"
+".\output\show_2.o"
+".\output\show_3.o"
+".\output\timer_ctrl.o"
+".\output\usart.o"
+".\output\wifistring.o"
+".\output\clk.o"
+".\output\fmc.o"
+".\output\gpio.o"
+".\output\sys.o"
+".\output\timer.o"
+".\output\uart.o"
+".\output\wdt.o"
+".\output\retarget.o"
+".\output\startup_mini58series.o"
+".\output\system_mini58series.o"
+--strict --scatter ".\Output\WifiString.sct"
+--entry Reset_Handler --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\WifiString.map" -o .\Output\WifiString.axf
