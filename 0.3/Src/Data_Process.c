@@ -21,6 +21,28 @@ _Uint8						PowerOnNum;
 _Flag							WdtRstFlag;
 _Uint8 						NormalColorPre;
 _Uint8						NormalModePre;
+_Uint8            ShowColorPre;
+_Uint8            ShowModePre;
+_Uint8            KeyMode;
+
+const _Uint8  KEY_MODE[][2]={
+  0x0,0x0,
+  0x1,0x0,
+  0x1,0x1,
+  0x1,0x2,
+  0x1,0x3,
+  0x1,0x9,
+  0x1,0xd,
+  0x3,0x14,
+  0x6,0x16,
+  0x8,0x1c,
+  0xb,0x0,
+  0xc,0x2,
+  0xd,0x6
+};
+
+
+
 
 
 
@@ -39,7 +61,7 @@ const _Uint8 COLOR_VECTOR[18][3] =
   0,250,0,      		//1:green
   0,0,250,      		//2:blue
   250,50,0,     		//3:orange
-  250,50,50,   		//4:pink
+  250,50,50,   		  //4:pink
   0,250,50,     		//5:spring green
   250,150,0,    		//6:gold
   250,0,50,     		//7:peach
@@ -51,8 +73,8 @@ const _Uint8 COLOR_VECTOR[18][3] =
 	150,250,200,
 	150,250,250,
 	150,200,50,
-	0,150,0,			// dark green
-	50,0,250,			// DARK_RED
+	0,150,0,			    // dark green
+	50,0,250,			    // DARK_RED
 };
 
 
@@ -167,54 +189,28 @@ static void Key_Process(void)
 	if (KeyModeStatus == KEY_SHORT){
 		KeyModeStatus = KEY_IDLE;
 
-		DisplayData.Mode++;
-    if (DisplayData.Mode > MODE_MAX){
-      DisplayData.Mode = 0;
-      DisplayData.ColorValue = NormalColorPre;
-    }
-    else{
-      DisplayData.ModeBuf = DisplayData.Mode;
-    }
+		KeyMode++;
+    if (KeyMode > 12)   KeyMode = 0;
     
-    //Show Mode
-    if (DisplayData.Mode == 0xA){
-        DisplayData.ColorValue = 0;
-    }
+    DisplayData.Mode = KEY_MODE[KeyMode][0];
+    DisplayData.ColorValue = KEY_MODE[KeyMode][1];
+    
     
     //ColorValue get
     Color_Value_Get(DisplayData.ColorValue);
     DisplayData.InitFlag = TRUE;
-    FlashSaveFlag = TRUE;
+    
+    
+    if (DisplayData.Mode != 0){
+      DisplayData.ModeBuf = DisplayData.Mode;
+      FlashSaveFlag = TRUE;
+    }
 		return;
 	}
   
   if (KeyColorStatus == KEY_SHORT){
     KeyColorStatus = KEY_IDLE;
-    if (DisplayData.Mode != 0){
-      
-      //Normal Mode
-      if (DisplayData.Mode < 0x9){
-        DisplayData.ColorValue++;
-        if (DisplayData.ColorValue > COLOR_MAX){
-          DisplayData.ColorValue = 0;
-        }
-        Color_Value_Get(DisplayData.ColorValue);
-        NormalColorPre = DisplayData.ColorValue;
-        DisplayData.InitFlag = TRUE;
-        FlashSaveFlag = TRUE;
-      }
-      
-      //Show Mode
-      else if (DisplayData.Mode > 0xA){
-        DisplayData.ColorValue++;
-        if (DisplayData.ColorValue > 0x6){
-          DisplayData.ColorValue = 0;
-        }
-        Color_Value_Get(DisplayData.ColorValue);
-        DisplayData.InitFlag = TRUE;
-        FlashSaveFlag = TRUE;
-      }
-    }
+    
   }
   
   
@@ -268,14 +264,14 @@ static void Count_Down_Process(void)
       PORT_8H = RESET;
     } break;
     
-    case 5:{
+    case 6:{
       PORT_2H = RESET;
       PORT_4H = RESET;
       PORT_6H = SET;
       PORT_8H = RESET;
     } break;
     
-    case 6:{
+    case 8:{
       PORT_2H = RESET;
       PORT_4H = RESET;
       PORT_6H = RESET;
@@ -347,10 +343,13 @@ static void USART_Process(void)
 				DisplayData.Mode 			= NormalModePre;
 				DisplayData.ModeBuf		= NormalModePre;
 			}
-      else if (DisplayData.Mode > 0x8){
+      
+      if (DisplayData.Mode > 0x8){
         DisplayData.Mode      = 0x1;
         DisplayData.ModeBuf   = 0x1;
+        NormalModePre         = 0x1;
       }
+      
 			DisplayData.ColorValue	= USART_Buffer.payload[0];
 			NormalColorPre					= DisplayData.ColorValue;		//Save the normal color
 			Color_Value_Get(DisplayData.ColorValue);

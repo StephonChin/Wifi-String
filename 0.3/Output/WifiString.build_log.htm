@@ -27,11 +27,11 @@ Project File Date:  08/06/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil\ARM\ARM\ARMCC\Bin'
 Rebuild target 'WifiString'
-compiling Flash_Prgrm.c...
 compiling Display_Ctrl.c...
+compiling Flash_Prgrm.c...
 compiling Data_Process.c...
-compiling Key.c...
 compiling Led_Class.c...
+compiling Key.c...
 compiling MCU_Config.c...
 compiling Show_1.c...
 compiling Normal_Display.c...
@@ -40,18 +40,18 @@ compiling Timer_Ctrl.c...
 compiling USART.c...
 compiling Show_3.c...
 compiling WifiString.c...
-compiling fmc.c...
 compiling clk.c...
+compiling fmc.c...
 compiling gpio.c...
 compiling sys.c...
 compiling timer.c...
 compiling uart.c...
 compiling wdt.c...
-compiling retarget.c...
 assembling startup_Mini58Series.s...
+compiling retarget.c...
 compiling system_Mini58Series.c...
 linking...
-Program Size: Code=21848 RO-data=320 RW-data=72 ZI-data=1296  
+Program Size: Code=21800 RO-data=344 RW-data=76 ZI-data=1300  
 FromELF: creating hex file...
 ".\Output\WifiString.axf" - 0 Error(s), 0 Warning(s).
 
@@ -69,12 +69,12 @@ Package Vendor: Nuvoton
                 Nuvoton ARM Cortex-M NuMicro Family Device Support
    * Component: Startup Version: 3.00.003
    * Component: CLK Version: 3.00.003
-   * Component: FMC Version: 3.00.003
-   * Component: Timer Version: 3.00.003
-   * Component: GPIO Version: 3.00.003
    * Component: SYS Version: 3.00.003
    * Component: WDT Version: 3.00.003
    * Component: UART Version: 3.00.003
+   * Component: GPIO Version: 3.00.003
+   * Component: FMC Version: 3.00.003
+   * Component: Timer Version: 3.00.003
 
 <h2>Collection of Component include folders:</h2>
   H:\Willis\ShowLights\VoiceControl\WIFI-String\0.3\RTE
@@ -88,13 +88,29 @@ Package Vendor: Nuvoton
 
    * Component: Nuvoton::Device:Startup:3.00.003
       Include file:  Device\Mini58\Include\Mini58Series.h
-      Source file:   Device\Mini58\Driver\retarget.c
-      Source file:   Device\Mini58\Source\system_Mini58Series.c
       Source file:   Device\Mini58\Source\ARM\startup_Mini58Series.s
+      Source file:   Device\Mini58\Source\system_Mini58Series.c
+      Source file:   Device\Mini58\Driver\retarget.c
 
    * Component: Nuvoton::Device:Driver:CLK:3.00.003
       Source file:   Device\Mini58\Driver\clk.c
       Include file:  Device\Mini58\Driver\clk.h
+
+   * Component: Nuvoton::Device:Driver:SYS:3.00.003
+      Include file:  Device\Mini58\Driver\sys.h
+      Source file:   Device\Mini58\Driver\sys.c
+
+   * Component: Nuvoton::Device:Driver:WDT:3.00.003
+      Include file:  Device\Mini58\Driver\wdt.h
+      Source file:   Device\Mini58\Driver\wdt.c
+
+   * Component: Nuvoton::Device:Driver:UART:3.00.003
+      Source file:   Device\Mini58\Driver\uart.c
+      Include file:  Device\Mini58\Driver\uart.h
+
+   * Component: Nuvoton::Device:Driver:GPIO:3.00.003
+      Source file:   Device\Mini58\Driver\gpio.c
+      Include file:  Device\Mini58\Driver\gpio.h
 
    * Component: Nuvoton::Device:Driver:FMC:3.00.003
       Include file:  Device\Mini58\Driver\fmc.h
@@ -103,23 +119,7 @@ Package Vendor: Nuvoton
    * Component: Nuvoton::Device:Driver:Timer:3.00.003
       Include file:  Device\Mini58\Driver\timer.h
       Source file:   Device\Mini58\Driver\timer.c
-
-   * Component: Nuvoton::Device:Driver:GPIO:3.00.003
-      Source file:   Device\Mini58\Driver\gpio.c
-      Include file:  Device\Mini58\Driver\gpio.h
-
-   * Component: Nuvoton::Device:Driver:SYS:3.00.003
-      Source file:   Device\Mini58\Driver\sys.c
-      Include file:  Device\Mini58\Driver\sys.h
-
-   * Component: Nuvoton::Device:Driver:WDT:3.00.003
-      Include file:  Device\Mini58\Driver\wdt.h
-      Source file:   Device\Mini58\Driver\wdt.c
-
-   * Component: Nuvoton::Device:Driver:UART:3.00.003
-      Include file:  Device\Mini58\Driver\uart.h
-      Source file:   Device\Mini58\Driver\uart.c
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

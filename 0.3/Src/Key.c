@@ -40,7 +40,7 @@ void Key_Scan(void)
 	
 	else
 	{
-		if (KeyModeDoneFlag == FALSE && KeyModeTime > 1)
+		if (KeyModeDoneFlag == FALSE && KeyModeTime > 1 && KeyModeTime < 10)
 		{
 			KeyModeStatus = KEY_SHORT;
 		}
@@ -65,7 +65,7 @@ void Key_Scan(void)
 	
 	else
 	{
-		if (KeyColorDoneFlag == FALSE && KeyColorTime > 1)
+		if (KeyColorDoneFlag == FALSE && KeyColorTime > 1 && KeyColorTime < 10)
 		{
 			KeyColorStatus = KEY_SHORT;
 		}
