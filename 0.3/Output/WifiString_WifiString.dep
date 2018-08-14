@@ -1,5 +1,5 @@
 Dependencies for Project 'WifiString', Target 'WifiString': (DO NOT MODIFY !)
-F (.\Src\Data_Process.c)(0x5B6A45EF)(-c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I .\Inc-IH:\Willis\ShowLights\VoiceControl\WIFI-String\0.3\RTE-IC:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Driver-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include-D__UVISION_VERSION="521" -D_RTE_-o .\output\data_process.o --omf_browse .\output\data_process.crf --depend .\output\data_process.d)
+F (.\Src\Data_Process.c)(0x5B6A974A)(-c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I .\Inc-IH:\Willis\ShowLights\VoiceControl\WIFI-String\0.3\RTE-IC:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Driver-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include-D__UVISION_VERSION="521" -D_RTE_-o .\output\data_process.o --omf_browse .\output\data_process.crf --depend .\output\data_process.d)
 I (.\Inc\Data_Process.h)(0x5B625F4F)
 I (.\Inc\Type_Def.h)(0x5B680DD5)
 I (C:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include\Mini58Series.h)(0x58BCCCF0)
@@ -92,7 +92,7 @@ I (.\Inc\USART.h)(0x5B625F4F)
 I (.\Inc\Timer_Ctrl.h)(0x5B625F4F)
 I (.\Inc\Key.h)(0x5B690B45)
 I (C:\Keil\ARM\ARM\ARMCC\include\stdlib.h)(0x574E3E26)
-F (.\Src\Key.c)(0x5B69684F)(-c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I .\Inc-IH:\Willis\ShowLights\VoiceControl\WIFI-String\0.3\RTE-IC:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Driver-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include-D__UVISION_VERSION="521" -D_RTE_-o .\output\key.o --omf_browse .\output\key.crf --depend .\output\key.d)
+F (.\Src\Key.c)(0x5B6E5CFB)(-c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I .\Inc-IH:\Willis\ShowLights\VoiceControl\WIFI-String\0.3\RTE-IC:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Driver-IC:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include-D__UVISION_VERSION="521" -D_RTE_-o .\output\key.o --omf_browse .\output\key.crf --depend .\output\key.d)
 I (.\Inc\Key.h)(0x5B690B45)
 I (.\Inc\Type_Def.h)(0x5B680DD5)
 I (C:\Keil\ARM\PACK\Nuvoton\NuMicro_DFP\1.1.0\Device\Mini58\Include\Mini58Series.h)(0x58BCCCF0)

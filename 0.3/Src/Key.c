@@ -40,16 +40,14 @@ void Key_Scan(void)
 	
 	else
 	{
-		if (KeyModeDoneFlag == FALSE && KeyModeTime > 1 && KeyModeTime < 10)
+		if (KeyModeDoneFlag == FALSE && KeyModeTime > 1)
 		{
 			KeyModeStatus = KEY_SHORT;
 		}
 		KeyModeTime = 0;
 		KeyModeDoneFlag = FALSE;
 	}
-  
-  
-  
+
   if (PORT_KEY_COLOR == RESET)
 	{
 		if (KeyColorDoneFlag == FALSE)

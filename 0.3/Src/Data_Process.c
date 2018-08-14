@@ -36,6 +36,7 @@ const _Uint8  KEY_MODE[][2]={
   0x3,0x14,
   0x6,0x16,
   0x8,0x1c,
+  0xA,0x0,
   0xb,0x0,
   0xc,0x2,
   0xd,0x6
@@ -190,7 +191,7 @@ static void Key_Process(void)
 		KeyModeStatus = KEY_IDLE;
 
 		KeyMode++;
-    if (KeyMode > 12)   KeyMode = 0;
+    if (KeyMode > 13)   KeyMode = 0;
     
     DisplayData.Mode = KEY_MODE[KeyMode][0];
     DisplayData.ColorValue = KEY_MODE[KeyMode][1];
@@ -324,12 +325,12 @@ static void USART_Process(void)
 	if(USART_Buffer.version != PROTOCOL_VER)		return;
 
 	switch (USART_Buffer.cmd){
-		case CMD_SOCKET_ON:{
+		case CMD_SOCKET_OFF:{
 			DisplayData.Mode			= 0;
 			DisplayData.InitFlag	= TRUE;
 		}break;
 
-		case CMD_SOCKET_OFF:{
+		case CMD_SOCKET_ON:{
 			DisplayData.Mode 			= DisplayData.ModeBuf;
 			DisplayData.InitFlag	= TRUE;
 		}break;
